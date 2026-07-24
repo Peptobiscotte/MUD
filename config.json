@@ -1,0 +1,354 @@
+[
+    {
+        "room": 1,
+        "name": "Glade of the Powerfull",
+        "description": "A very peacefull glade, in the middle of the forrest with a well",
+        "exits": ["south", "north"],
+        "neighbours": {
+            "south": "2",
+            "north": "5"
+        },
+        "items": {
+            "wooden stick": {
+                "desc": "Not enough to fight properly...",
+                "type": "atk",
+                "dmg": 2
+            },
+            "water of the brave": {
+                "desc": "Give a dose of courage before a new quest",
+                "type": "heal",
+                "heal": 50
+            },
+            "chest": {
+                "desc": "A locked golden chest",
+                "type": "special"
+            }
+        },
+        "npcs": [
+            {
+                "name": "the great sage",
+                "start": "greet",
+                "nodes": {
+                    "greet": {
+                        "text": "Welcome to Devas's forest! To begin, I have an enigm for you, will you be able to find the response?",
+                        "responses": { "yes": "riddle", "no": "leave" }
+                    },
+                    "riddle": {
+                        "text": "I always run but never walk, often murmur but never talk, have a bed but never sleep, have a mouth but never eat. What am I?",
+                        "responses": { "river": "correct", "a river": "correct", "wrong": "wrong" }
+                    },
+                    "correct": {
+                        "text": "end=Good luck with your adventure",
+                        "end": true
+                    },
+                    "wrong": {
+                        "text": "end=Wrong response, try to find the correct answer and come back later young player",
+                        "end": true
+                    },
+                    "leave": {
+                        "text": "end=You can come back later young player",
+                        "end": true
+                    }
+                }
+            }
+        ],
+        "monsters": [
+            {
+                "name": "spiderling",
+                "hp": 10,
+                "attack": 5,
+                "alive": true,
+                "items": {
+                    "vial of venom": {
+                        "desc": "Use with caution",
+                        "type": "special"
+                    },
+                    "spider fang": {
+                        "desc": "Sharp...",
+                        "type": "special"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 2,
+        "name": "Village of Devas",
+            "description": "A quiet village nestled at the forest's edge",
+        "exits": ["north", "east", "west"],
+        "neighbours": {
+            "north": "1",
+            "east": "3",
+            "west": "4"
+        },
+        "items": {},
+        "npcs": [
+            {
+                "name": "big fat cat",
+                "start": "greet",
+                "nodes": {
+                    "greet": {
+                        "text": "miaou miaou",
+                        "responses": { "miaou": "miaou" }
+                    },
+                    "miaou": {
+                        "text": "end=miaou",
+                        "end": true
+                    }
+                }
+            }
+        ],
+        "monsters":[],
+        "questgivers": [
+            {
+                "name": "fouras",
+                "start": "greet",
+                "description": "Find a vial of venom from a spiderling and give it to fouras",
+                "nodes": {
+                    "greet": {
+                        "text": "Hello my dear friend\nI need you to find a vial of venom from a spiderling and give it back to me\nYou will be highly rewarded, do you accept this quest?",
+                        "responses": { "yes": "accept_quest", "no": "leave" }
+                    },
+                    "accept_quest": {
+                        "text": "fouras's quest",
+                        "end": true
+                    },
+                    "leave": {
+                        "text": "Come back when you are ready",
+                        "end": true
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 3,
+        "name": "The Wanderer's Rest",
+            "description": "The village's favorite gathering place, offering warm beds, hearty food, and tales from every corner of the realm.",
+        "exits": ["west"],
+        "neighbours": {
+            "west": "2"
+        },
+        "items": {
+            "silver coin": {
+                "desc": "Someone must have dropped it",
+                "type": "special"
+            }
+        },
+        "npcs": [
+            {
+                "name": "taverier",
+                "start": "greet",
+                "nodes": {
+                    "greet": {
+                        "text": "Hello dude",
+                        "responses": { "hello": "wellbeing" }
+                    },
+                    "wellbeing": {
+                        "text": "how are you?",
+                        "responses": { "fine": "bye" }
+                    },
+                    "bye": {
+                        "text": "end=have a great day",
+                        "end": true
+                    }
+                }
+            }
+        ],
+        "monsters": [
+            {
+                "name": "goblin",
+                "hp": 20,
+                "attack": 8,
+                "alive": true,
+                "items": {
+                    "goblin dagger": {
+                        "desc": "A blunt knife",
+                        "type": "atk",
+                        "dmg": 50
+                    }
+                }
+            },
+            {
+                "name": "steven",
+                "hp": 15,
+                "attack": 10,
+                "alive": true,
+                "items": {
+                    "key fragment one": {
+                        "desc": "It's part of a larger key",
+                        "type": "special"
+                    }
+                }
+            }
+        ],
+        "questgivers": [
+            {
+                "name": "Alfred the innkeeper",
+                "start": "greet",
+                "description": "Bring an onion to Alfred",
+                "nodes": {
+                    "greet": {
+                        "text": "I need an onion for my soup, bring it to me",
+                        "responses": { "yes": "accept_quest", "no": "leave" }
+                    },
+                    "accept_quest": {
+                        "text": "Alfred the innkeeper's quest",
+                        "end": true
+                    },
+                    "leave": {
+                        "text": "Come back when you are ready",
+                        "end": true
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 4,
+        "name": "The Old Forge",
+            "description": "It seems abandoned. Perhaps I could bring it back to life.",
+        "exits": ["east"],
+        "neighbours": {
+            "east": "2"
+        },
+        "items": {},
+        "npcs": [],
+        "monsters": [
+            {
+                "name": "fire elemental",
+                "hp": 10,
+                "attack": 15,
+                "alive": true,
+                "items": {
+                    "burning coal": {
+                        "desc": "Like holding a burning sun",
+                        "type": "special"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 5,
+        "name": "The Dungeon Gates",
+            "description": "The ancient gates of a forgotten dungeon. Darkness waits beyond.",
+        "exits": ["south", "north"],
+        "neighbours": {
+            "south": "1",
+            "north": "6"
+        },
+        "items": {
+            "lit torch": {
+                "desc": "That's lit!",
+                "type": "special"
+            }
+        },
+        "npcs": [],
+        "monsters": [],
+        "questgivers": [
+            {
+                "name": "gatekeeper",
+                "start": "greet",
+                "description": "Kill all the monsters outside the dungeon",
+                "nodes": {
+                    "greet": {
+                        "text": "gatekeeper's quest",
+                        "end": true
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 6,
+        "name": "The Dungeon Hall",
+            "description": "A cold stone corridor where every shadow seems to hide an unseen danger.",
+        "exits": ["south", "east"],
+        "neighbours": {
+            "south": "5",
+            "east": "7"
+        },
+        "items": {},
+        "npcs": [],
+        "lit": false,
+        "monsters": [
+            {
+                "name": "Jose",
+                "hp": 10,
+                "attack": 50,
+                "alive": true,
+                "items": {
+                    "the destroyer": {
+                        "desc": "Is it a sword...or a gun??",
+                        "type": "atk",
+                        "dmg": 100
+                    },
+                    "magic mushroom": {
+                        "desc": "It has a faint floral scent, should I eat it?",
+                        "type": "special"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 7,
+        "name": "Necropolis",
+            "description": "A forgotten necropolis filled with weathered graves and an unsettling silence.",
+        "exits": ["west", "north"],
+        "neighbours": {
+            "west": "6",
+            "north": "8"
+        },
+        "items": {},
+        "npcs": [],
+        "lit": false,
+        "monsters": [
+            {
+                "name": "Skeleton King",
+                "hp": 15,
+                "attack": 16,
+                "alive": true,
+                "items": {
+                    "health potion": {
+                        "desc": "Looks like apple juice",
+                        "type": "heal",
+                        "heal": 100
+                    },
+                    "fireball scroll": {
+                        "desc": "It's written in elvish",
+                        "type": "special"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "room": 8,
+        "name": "The Demon's rest",
+            "description": "A massive hall consumed by shadows, where the air burns with the presence of an ancient evil.",
+        "exits": ["south", "north"],
+        "neighbours": {
+            "south": "7",
+            "north": "1"
+        },
+        "items": {},
+        "npcs": [],
+        "lit": false,
+        "monsters": [
+            {
+                "name": "Xorrt'ngst the ancient",
+                "hp": 800,
+                "attack": 10,
+                "alive": true,
+                "items": {
+                    "key fragment three": {
+                        "desc": "Another key fragment",
+                        "type": "special"
+                    }
+                }
+            }
+        ]
+    }
+]

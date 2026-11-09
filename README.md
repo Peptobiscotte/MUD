@@ -1,6 +1,4 @@
-*This activity has been created as part of the 42 curriculum by mde-nas, mmonnier.*
-
-# The Answer Protocol (TAP)
+# MUD
 
 A small shared-world, text-based multiplayer adventure (MUD) built on top of a custom
 TCP protocol, **RFC 42TAP**. The repository contains a Go server, a minimal CLI client,
